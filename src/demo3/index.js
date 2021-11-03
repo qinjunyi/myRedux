@@ -1,4 +1,4 @@
-import CreateStore from './utils/CreateStore.js'
+import { createStore, combineReducers } from './utils'
 
 let initialState = { counter: { count: 0 }, msg: { id: 0, content: 'test' } }
 
@@ -26,19 +26,9 @@ const msgReducer = (state, action) => {
       return state
   }
 }
-const combineReducers = (originReducers) => {
-  const rKeys = Object.keys(originReducers)
-  return function (state, action) {
-    const nextState = {}
-    for (let i = 0; i < rKeys.length; i++) {
-      const key = rKeys[i]
-      nextState[key] = originReducers[key](state[key], action)
-    }
-    return nextState
-  }
-}
+
 const reducers = combineReducers({ counter: countReducer, msg: msgReducer })
-const store = CreateStore(reducers, initialState)
+const store = createStore(reducers, initialState)
 
 store.subscribe(() => {
   const latestState = store.getState()

@@ -7,7 +7,7 @@ const { babel } = require('@rollup/plugin-babel')
 const commonjs = require('rollup-plugin-commonjs')
 
 const inputOptions = {
-  input: path.resolve(__dirname, './src/demo7/index.js'),
+  input: path.resolve(__dirname, './src/demo4/index.js'),
   plugins: [
     commonjs(),
     babel({

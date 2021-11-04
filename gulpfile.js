@@ -5,8 +5,9 @@ const { terser } = require('rollup-plugin-terser')
 const path = require('path')
 const { babel } = require('@rollup/plugin-babel')
 const commonjs = require('rollup-plugin-commonjs')
+
 const inputOptions = {
-  input: path.resolve(__dirname, './src/demo5/index.js'),
+  input: path.resolve(__dirname, './src/demo7/index.js'),
   plugins: [
     commonjs(),
     babel({

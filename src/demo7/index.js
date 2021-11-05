@@ -9,12 +9,12 @@ import { exceptionMiddleware, loggerMiddleware } from './middleware'
 
 const reducers = combineReducers({ counter: countReducer, msg: msgReducer })
 
-const rewriteCreateStoreFunc = applyMiddleware(
+const overrideCreateStoreFunc = applyMiddleware(
   loggerMiddleware,
   exceptionMiddleware
 )
 
-const store = createStore(reducers, rewriteCreateStoreFunc)
+const store = createStore(reducers, overrideCreateStoreFunc)
 
 store.subscribe(() => {
   const latestState = store.getState()
@@ -28,12 +28,12 @@ store.subscribe(() => {
 store.dispatch({ type: 'INCREMENT', payload: 1 })
 
 const actionCreators = {
-  decrement: () => ({ type: 'DECREMENT', payload: 2 }),
+  decrement: (val) => ({ type: 'DECREMENT', payload: val }),
   modifyContent: () => ({
     type: 'MODIFY_CONTENT',
     payload: { content: 'test' }
   })
 }
 const actions = bindActionCreators(actionCreators, store.dispatch)
-actions.decrement()
+actions.decrement(2)
 actions.modifyContent()

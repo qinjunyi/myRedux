@@ -8,7 +8,7 @@ const compose = (middlewares) => {
 }
 
 const applyMiddleware = (...middlewares) => {
-  return function rewriteCreateStoreFunc(oldCreateStore) {
+  return function overrideCreateStoreFunc(oldCreateStore) {
     return function enhancer(reducers, initialState) {
       const store = oldCreateStore(reducers, initialState)
       const limitStore = { getState: store.getState }

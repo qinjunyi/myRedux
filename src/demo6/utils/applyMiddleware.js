@@ -6,9 +6,17 @@ const compose = (middlewares) => {
         a(b(...args))
   )
 }
+// 降级方案
+// const compose = (middlewares,dispatch) => {
+//   let dispatchTmp = dispatch
+//   middlewares.reverse().map(middleware => {
+//     dispatchTmp = middleware(dispatchTmp)
+//   })
+//   return dispatchTmp
+// }
 
 const applyMiddleware = (...middlewares) => {
-  return function rewriteCreateStoreFunc(oldCreateStore) {
+  return function overrideCreateStoreFunc(oldCreateStore) {
     return function newCreateStore(reducers, initialState) {
       const store = oldCreateStore(reducers, initialState)
       const dispatch = store.dispatch

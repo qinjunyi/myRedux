@@ -614,7 +614,7 @@ const bindActionCreators = (actionCreators, dispatch) => {
 
 ## 总结
 
-本次对redux的探索是层层递进的方式去进行，这个思路得益于**[brickspert](https://github.com/brickspert)** 大佬的这篇[文章](https://github.com/brickspert/blog/issues/22)，“站在巨人肩膀上前行”，给大佬点个赞。自己在实现的过程中也有很多其他的见解和感受。同时自己也将redux源码整体过了一遍，学习的不仅是代码更多的是思路和想法。
+本次对redux的探索是层层递进的方式去进行，这个思路得益于[brickspert](https://github.com/brickspert) 大佬的这篇[文章](https://github.com/brickspert/blog/issues/22)，“站在巨人肩膀上前行”，给大佬点个赞。自己在实现的过程中也有很多其他的见解和感受。同时自己也将redux源码整体过了一遍，学习的不仅是代码更多的是思路和想法。
 
 ## P.S
 

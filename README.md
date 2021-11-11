@@ -8,7 +8,7 @@
 
 ## 初版
 
-既然是个状态容器，就命名为store吧（为啥不叫container？因为官方叫store），再声明个类似构造函数的create函数？ok，就定义一个createStore。管理状态，很容易就想到这个store需要一个setter，一个getter，另外状态可预测，那么应该有个watcher。
+既然是个状态容器，就命名为store吧（为啥不叫container？因为官方叫store），再声明个类似构造函数的createStore。管理状态，很容易就想到这个store需要一个setter，一个getter，另外状态可预测，那么应该有个watcher。
 
 ```js
 const createStore = (initialState) => {
@@ -614,7 +614,7 @@ const bindActionCreators = (actionCreators, dispatch) => {
 
 ## 总结
 
-本次对redux的探索是层层递进的方式去进行，这个思路得益于[brickspert](https://github.com/brickspert) 大佬的这篇[文章](https://github.com/brickspert/blog/issues/22)，“站在巨人肩膀上前行”，给大佬点个赞。自己在实现的过程中也有很多其他的见解和感受。同时自己也将redux源码整体过了一遍，学习的不仅是代码更多的是思路和想法。
+本文对redux的探索是层层递进的方式去进行，这个思路得益于[brickspert](https://github.com/brickspert)大佬的这篇[文章](https://github.com/brickspert/blog/issues/22)，“站在巨人肩膀上前行”，给大佬点个赞。自己在实现的过程中也有很多其他的见解和感受。同时自己也将redux源码整体过了一遍，学习的不仅是代码更多的是思路和想法。
 
 ## P.S
 

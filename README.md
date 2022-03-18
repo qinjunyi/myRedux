@@ -2,13 +2,11 @@
 
 ## 前言
 
-公司大部分后台项目都在用umi，让之前我这个只写vue的前端搬砖员接触到了很多新的思想、插件、开发模式等等，其中redux对我来说就是个新鲜的工具。刚接触时，心想这玩意儿跟vuex长得差不多啊，后来上网查了查“vuex和redux的区别”，原来尤大是借鉴了redux的思想，给vue定制了一套状态管理器，难怪如此相像。
-
 "Redux 是 JavaScript 状态容器，提供可预测化的状态管理",这是redux官网上的简介，基于此研究下redux内部到底是如何管理js状态的，并且实现一个简易版的Redux。
 
 ## 初版
 
-既然是个状态容器，就命名为store吧（为啥不叫container？因为官方叫store），再声明个类似构造函数的createStore。管理状态，很容易就想到这个store需要一个setter，一个getter，另外状态可预测，那么应该有个watcher。
+既然是个状态容器，就命名为store（为啥不叫container？因为官方叫store），再声明个类似构造函数的createStore。管理状态，很容易就想到这个store需要一个setter，一个getter，另外状态可预测，那么应该有个watcher。
 
 ```js
 const createStore = (initialState) => {
